@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+
+header {
+    height: 0%;
+    background-color: lightblue;
+}
+
+nav, main, aside {
+    height: calc((100vh - 50px)/3);
+
+}
+
+nav {
+    background-color: lightcoral;
+}
+
+main {
+    background-color: aquamarine;
+}
+
+aside {
+    background-color: yellow;
+}
+
+/* 
+- industry standard is mobile first
+- max-width - desktop to mobile 
+- min-width - mobile to desktop 
+*/
+
+@media screen and (max-width: 768px) {
+
+    .content-container {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: red;
+    }
+
+    nav, main, aside {
+        height: calc((100vh - 50px));
+        width: 33%;
+        box-sizing: border-box;
+    }
+}
+/* 
+@media screen and (max-width: 1200px) {
+    div {
+        background-color: blue;
+    }
+} */
+
+
