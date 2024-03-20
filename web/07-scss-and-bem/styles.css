@@ -1,0 +1,29 @@
+.card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.card .card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: green;
+}
+.card .card-description {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #f39c12;
+}
+.card .card-buttton {
+  display: inline-block;
+  background-color: green;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+.card .card-buttton:hover {
+  background-color: #004d00;
+}/*# sourceMappingURL=styles.css.map */
