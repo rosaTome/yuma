@@ -55,7 +55,7 @@ nav {
     padding: 0;
 }
 
-.button img {
+.button a img {
     max-width: 70px;
     max-height: 50px;
     padding: 0;
@@ -104,10 +104,6 @@ footer {
     background-color: brown;
 }
 
-header > button > img {
-    max-width: 10%;
-}
-
 @media screen and (min-width: 768px){
     body{
         display: grid;
@@ -128,7 +124,7 @@ header > button > img {
         grid-area: nav;
     }
     
-    .button img {
+    .button a img {
         display: none;
     }
 
@@ -170,6 +166,13 @@ header > button > img {
         grid-area: footer;
         background-color: brown;
     }
+}
+
+img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center center; 
 }
 
 @media screen and (min-width: 1024px){
