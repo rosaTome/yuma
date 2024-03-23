@@ -5,7 +5,7 @@
     padding: 10px;
     box-sizing: border-box;
     font-family: "League Script";
-    font-size: 1.5rem;
+    font-size: 25px;
     text-align: center;
     background-color: rgb(245, 233, 235);
     color: rgb(2, 67, 2);
@@ -40,11 +40,29 @@ header {
 nav {
     grid-area: nav;
     list-style-type: none;
-    background-color: orange;
+    padding: 0;
 }
 
-.button > img {
-    max-width: 100px;
+.button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: end;
+    padding: 0;
+}
+
+.button a {
+    padding: 0;
+}
+
+.button img {
+    max-width: 70px;
+    max-height: 50px;
+    padding: 0;
+}
+
+.nav > ul {
+    display: none;
 }
 
 main {
@@ -52,7 +70,7 @@ main {
     background-color: yellow;
 }
 
-div {
+.div {
     grid-area: div;
     background-color: lightgreen;
 }
@@ -108,8 +126,25 @@ header > button > img {
     nav {
         display: block;
         grid-area: nav;
+    }
+    
+    .button img {
+        display: none;
+    }
+
+    .nav {
+        padding-right: 0px;
+    }
+
+    .nav > ul {
         list-style-type: none;
-        background-color: orange;
+        padding: 0;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        margin-left: 20px;
     }
     
     section {
