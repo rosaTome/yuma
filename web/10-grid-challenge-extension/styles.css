@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap'); 
 
 * {
     margin: 0;
@@ -14,7 +14,7 @@
 body {
     display: grid;
     grid-template-areas:
-        "header header header header"
+        "header header header nav"
 
         "main main main main"
         "div div div div"
@@ -36,8 +36,9 @@ header {
 }
 
 nav {
-    display: none;
+    grid-area: nav;
     list-style-type: none;
+    background-color: orange;
 }
 
 .button > img {
@@ -46,37 +47,41 @@ nav {
 
 main {
     grid-area: main;
-    background-color: orange;
+    background-color: yellow;
 }
 
 div {
     grid-area: div;
-    background-color: yellow;
+    background-color: lightgreen;
 }
 
 article {
     grid-area: article;
-    background-color: lightgreen;
-}
-
-section {
-    display: none;
     background-color: green;
 }
 
-aside {
+section {
+    grid-area: section;
     display: none;
     background-color: lightblue;
 }
 
-figure {
+aside {
+    grid-area: aside;
     display: none;
     background-color: blue;
 }
 
-footer {
+figure {
+    grid-area: figure;
     display: none;
     background-color: purple;
+}
+
+footer {
+    grid-area: footer;
+    display: none;
+    background-color: brown;
 }
 
 header > button > img {
@@ -87,7 +92,7 @@ header > button > img {
     body{
         display: grid;
         grid-template-areas:
-        "header header header header"
+        "header header header nav"
 
         "main main main div"
         "article article section section"
@@ -98,40 +103,51 @@ header > button > img {
         grid-template-rows: 1fr 2fr 2fr 2fr 3fr;
     }
 
-    /* aside {
-        display: block;
-        grid-area: aside;
-        background-color: orange;     
-    } */
-
     nav {
         display: block;
         grid-area: nav;
         list-style-type: none;
+        background-color: orange;
     }
     
     section {
         display: block;
         grid-area: section;
-        background-color: green;
+        background-color: lightblue;
     }
     
     aside {
         display: block;
         grid-area: aside;
-        background-color: lightblue;
+        background-color: blue;
     }
     
     figure {
         display: block;
         grid-area: figure;
-        background-color: blue;
+        background-color: purple;
     }
     
     footer {
         display: block;
         grid-area: footer;
-        background-color: purple;
+        background-color: brown;
     }
-    
+}
+
+@media screen and (min-width: 1024px){
+    body{
+        display: grid;
+        grid-template-areas:
+        "header header header nav"
+
+        "main main div article"
+        "section section section article"
+        "section section section aside"
+        "figure footer footer footer"
+        "figure footer footer footer"
+        ;
+        gap: 10px;
+        grid-template-rows: 1fr 3fr 3fr 3fr 3fr 3fr;
+    }
 }
