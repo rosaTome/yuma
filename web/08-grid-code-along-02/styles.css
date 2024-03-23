@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 1.5rem;
+    color: white;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header header"
+        "menu main main main"
+        "menu footer footer footer"
+    ;
+    gap: 10px;
+}
+
+header, nav, main, aside {
+    background-color: purple;
+    color:  white;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: menu;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: footer;
+}
