@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    min-height: 7rem;
+    background-color: lightblue;
+}
+
+nav, main, aside {
+    height: 15rem;
+}
+
+nav {
+    background-color: lightcoral;
+}
+
+main {
+    background-color: aquamarine;
+}
+
+aside {
+    background-color: yellow;
+}
+
+/* industry standard is mobile first */
+@media screen and (min-width: 768px) {
+
+    body {
+        display: grid;
+
+        grid-template-columns: 1fr 2fr 1fr;
+        /* fixed columns */
+        /* grid-template-columns: 200px 200px 400px 200px; */
+        grid-template-rows: 15rem 1fr;
+        height: 100vh;
+    } 
+
+    header {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    /* resets the value to it's inherited value if it inherits from parent */
+    nav, main, aside {
+        height: unset;
+    }
+}  
