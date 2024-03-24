@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  background-color: rgb(231, 63, 91);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  margin: 10%;
+}
+
+.card {
+  background-color: rgb(241, 241, 241);
+  border-radius: 1px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.card h2, .card p {
+  margin: 20px;
+  background-color: rgb(241, 241, 241);
+}
+.card .card-title {
+  font-size: 25px;
+  color: #333;
+  font-weight: bolder;
+}
+.card .card-description {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.8;
+}
+.card .flex-container {
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgb(241, 241, 241);
+  margin: 20px 10px 20px 0px;
+}
+.card .flex-container a {
+  margin-left: 20px;
+  font-size: 10px;
+}
+.card .flex-container .button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 1px;
+  border: 1px solid black;
+  font-size: 12px;
+}
+.card .flex-container .button--book {
+  background-color: #333;
+  color: #fff;
+}
+.card .flex-container .button--book:hover {
+  background-color: #1a1a1a;
+}
+.card .flex-container .button--more {
+  background-color: #fff;
+  color: #333;
+}
+.card .flex-container .button--more:hover {
+  background-color: #e6e6e6;
+}/*# sourceMappingURL=styles.css.map */

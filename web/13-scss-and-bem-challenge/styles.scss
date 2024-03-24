@@ -1,0 +1,90 @@
+// variables
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+$font-family: "Poppins";
+$primary-color: #333;
+$secondary-color: #fff;
+$secondary-color-light: rgb(241, 241, 241);    
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+    background-color: rgb(231, 63, 91)
+}
+
+body {
+    display: flex;
+    align-items: center;
+    margin: 10%;
+}
+
+.card {
+    background-color: $secondary-color-light;
+    border-radius: 1px;
+    max-width: 350px;
+    margin: 0 auto;
+
+    img {
+        max-width: 100%;
+        max-height: 100%
+    }
+
+    h2, p {
+        margin: 20px;
+        background-color: $secondary-color-light;
+    }
+
+    .card-title {
+        font-size: 25px;
+        color: $primary-color;
+        font-weight: bolder;
+    }
+
+    .card-description {
+        font-size: 12px;
+        color: $primary-color;
+        line-height: 1.8;    
+    }
+
+    .flex-container {
+        display: flex;   
+        justify-content: flex-start;
+        background-color: $secondary-color-light;
+        margin: 20px 10px 20px 0px;
+
+        a {
+            margin-left: 20px;
+            font-size: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 1px;
+            border: 1px solid black;
+            font-size: 12px;          
+
+            &--book {
+                background-color: $primary-color;
+                color: $secondary-color;
+
+                &:hover {
+                    background-color: darken($primary-color, 10%);
+                }
+            }
+
+            &--more {
+                background-color: $secondary-color;
+                color: $primary-color;
+
+                &:hover {
+                    background-color: darken($secondary-color, 10%);
+                }
+            }
+        }
+    }
+}
