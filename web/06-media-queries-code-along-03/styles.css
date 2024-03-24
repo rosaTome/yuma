@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 50px;
+    background-color: lightblue;
+}
+
+nav, main, aside {
+    /* 
+    - sets viewpoint to 100%
+    - takes away 50px from the 100% view point due to the height set above in the header
+    - divides total by 3 to provide equal sizes for each column
+     */
+    height: calc((100vh - 50px)/3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    background-color: lightcoral;
+}
+
+main {
+    background-color: aquamarine;
+}
+
+aside {
+    background-color: yellow;
+}
+
+@media screen and (min-width: 768px) {
+    .content-container {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: red;
+    }
+
+    nav, main, aside {
+        /* 
+        - sets viewpoint to 100%
+        - takes away 50px from the 100% view point due to the height set above in the header 
+        - no division because height of header does not affect the width here 
+        */
+        height: calc((100vh - 50px));
+        width: 33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .content-container {
+        background-color: blue;
+    }
+} 
