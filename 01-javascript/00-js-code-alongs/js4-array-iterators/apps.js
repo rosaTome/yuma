@@ -3,17 +3,21 @@ const yumaNames = ["Nic", "Berna", "Nabeel", "Josh", "Callum"];
 // traditional for loop
 console.log("---FOR LOOP---");
 for (let i = 0; i < yumaNames.length; i++) {
-    console.log(yumaNames[i].toLowerCase());
+    console.log(yumaNames[i].toUpperCase());
 }
 
-// for each
-console.log("---FORM EACH LOOP---");
+// forEach
+console.log("---FOR EACH LOOP---");
 yumaNames.forEach((yumaName) => {
     console.log(yumaName.toUpperCase());
 })
 
-// map
-console.log("---MAP LOOP---");
+// forEach (in one line)
+console.log("---FOR EACH LOOP (in one line)---");
+yumaNames.forEach(yumaName => console.log(yumaName.toUpperCase()));
+
+// map method
+console.log("---MAP METHOD---");
 const upercaseYumaNames = yumaNames.map((yumaName) => {
     return yumaName.toUpperCase();
 }); 
@@ -21,28 +25,22 @@ const upercaseYumaNames = yumaNames.map((yumaName) => {
 console.log(yumaNames);
 console.log(upercaseYumaNames);
 
-// filter
-console.log("---FILTER---");
+// filter method
+console.log("---FILTER METHOD ---");
 const longNames = yumaNames.filter((yumaName) => {
-    // return is similar to if, specifies the value that should be returned
+    // return is similar to if statement, specifies the value that should be returned
     return yumaName.length > 5 ;
 });
 console.log(longNames);
-// still left with the original array
 console.log(yumaNames);
 
+// chaining array iterator methods 
+console.log("---CHAINING ARRAY ITERATOR METHODS---");
 
-// chaining
-console.log("---CHAINING---");
-//  chaining array iterator methods
-
-    // lowercase every name
-    // get rid of long names 
 const lowerShortNames = yumaNames
+    // lowercase every name
     .map(yumaName => yumaName.toLowerCase())
+    // get rid of long names 
     .filter(yumaName => yumaName.length < 5)
-
-    // const lowerNames = yumaNames.map...
-    // const shortNames = lowerNames.filter
 
 console.log(lowerShortNames);
