@@ -3,7 +3,7 @@
 const shoppingContainer = document.querySelector(".shopping-cart_container");
 
 if (!shoppingContainer){
-  throw new Error("Issue with selector");
+  throw new Error ("Issue with selector");
 }
 
 // Looping through objects using for in 
@@ -34,24 +34,22 @@ const supermarketItems : SuperMarketItems = {
 const buyStuff = (balance : number) => {
   const itemsPurchased: string[] = [];
   for (const key in supermarketItems) {
-    // console.log("key: " + key);
     if (supermarketItems[key] < balance) {
       itemsPurchased.push(key);
       balance -= supermarketItems[key];
-
     }
   }
   return itemsPurchased;
-
 };
 
-// console.log(buyStuff(40));
+console.log(buyStuff(9));
 
-const itemsbought = buyStuff(15);
-
+// use buyStuff function to populate our shopping container 
 // add the list to the html 
 
-shoppingContainer.innerHTML = `our bought items: ${itemsbought.join(", ")}`;
+const itemsBought = buyStuff(15);
+
+shoppingContainer.innerHTML = `our bought items: ${itemsBought.join(", ")}`;
 
 // use objects.entries to take a look at a 2d array
 const supermarketEntries = Object.entries
