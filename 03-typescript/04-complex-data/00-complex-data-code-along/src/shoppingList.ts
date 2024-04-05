@@ -31,19 +31,25 @@ const supermarketItems : SuperMarketItems = {
   // add the bought items to a list
   // return the bought items 
 
-const buyStuff = (balance : number) => {
-  const itemsPurchased: string[] = [];
+
+const buyStuff = (balance: number) => {
   for (const key in supermarketItems) {
-    // console.log("key: " + key);
-    if (supermarketItems[key] < balance) {
-      itemsPurchased.push(key);
-      balance -= supermarketItems[key];
-
-    }
+    console.log("key: " + key);
   }
-  return itemsPurchased;
-
 };
+
+// const buyStuff = (balance : number) => {
+//   const itemsPurchased: string[] = [];
+//   for (const key in supermarketItems) {
+//     // console.log("key: " + key);
+//     if (supermarketItems[key] < balance) {
+//       itemsPurchased.push(key);
+//       balance -= supermarketItems[key];
+
+//     }
+//   }
+//   return itemsPurchased;
+// };
 
 // console.log(buyStuff(40));
 
