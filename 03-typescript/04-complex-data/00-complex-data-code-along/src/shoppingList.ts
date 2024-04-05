@@ -1,13 +1,14 @@
-// SHOPPING LIST COMPLEX DATA
+// CODE ALONG PART ONE - SHOPPING LIST COMPLEX DATA
 
-const shoppingContainer = document.querySelector(".shopping-cart_container");
+// FOR IN
+
+const shoppingContainer = document.querySelector(".shopping-cart__container");
 
 if (!shoppingContainer){
   throw new Error("Issue with selector");
 }
 
-// Looping through objects using for in 
-
+// Looping through objects using For In 
 // types can start with capital
 type SuperMarketItems = {
   [key : string] : number
@@ -33,127 +34,21 @@ const supermarketItems : SuperMarketItems = {
 
 
 const buyStuff = (balance: number) => {
+  const itemsPurchased : string[] = [];
+
   for (const key in supermarketItems) {
-    console.log("key: " + key);
+    if (supermarketItems[key] < balance) {
+      itemsPurchased.push(key);
+      balance -= supermarketItems[key];
+    }
   }
+  return itemsPurchased;
 };
 
-// const buyStuff = (balance : number) => {
-//   const itemsPurchased: string[] = [];
-//   for (const key in supermarketItems) {
-//     // console.log("key: " + key);
-//     if (supermarketItems[key] < balance) {
-//       itemsPurchased.push(key);
-//       balance -= supermarketItems[key];
+console.log(buyStuff(40));
 
-//     }
-//   }
-//   return itemsPurchased;
-// };
-
-// console.log(buyStuff(40));
-
+// setting the buyStuff function from above as a variable 
 const itemsbought = buyStuff(15);
 
-// add the list to the html 
-
+// add the items to the html 
 shoppingContainer.innerHTML = `our bought items: ${itemsbought.join(", ")}`;
-
-// use objects.entries to take a look at a 2d array
-const supermarketEntries = Object.entries
-(supermarketItems); // Arrays of arrays
-console.log(supermarketEntries);
-
-
-//  use the information to add to our HTML
-// loop through the entries and create a ptag that holds both the key and the value
-const supermarketHTML = supermarketEntries.map((entry) => {
-  //  entry = array of key value pair 
-  const key = entry[0]
-  const value = entry[1]
-  const ptag = `<p>${key} : ${value}</[>]`
-  return ptag
-});
-
-shoppingContainer.innerHTML = supermarketHTML.join("");
-
-// going to use the objects.keys to create a new array containing just the keys
-
-const supermMarketKeys = Object.keys(supermarketItems)
-
-// loop through this array to find a specific key word, if it's found only return those items 
-
-// console.log(supermMarketKeys);
-
-const searchTerm = "oo"
-
-const matchedItems = supermMarketKeys.filter((item) => {
-
-  // if item matches then return true, it item does not reutrn false 
-
-  if (item.includes(searchTerm)) {
-    return true
-  } else {
-    return false
-  }
-})
-
-// console.log(matchedItems);
-
-// HOUSES COMPLEX DATA 
-
-type House = {
-  rooms: Room[];
-  address: Address;
-};
-
-type Room = {
-  name: string;
-  hasFirePlace: boolean;
-};
-
-type Address = {
-  houseName: string;
-  street: string;
-  town: string;
-  region: string;
-};
-
-const myHouse : House = {
-  rooms: [
-    {name: "front room", hasFirePlace: false},
-    {name: "bathroom", hasFirePlace: false},
-    {name: "kitchen", hasFirePlace: false},
-  ],
-  address: {
-    houseName : "beg end",
-    street: "bagshot row",
-    town: "hobbiton",
-    region: "the shire",
-  },
-};
-
-// HOUSE COMPLEX DATA - CHALLENGES:
-
-// 1. HOW DO YOU GET ACCESS TO THE HOUSE NAME?
-// for in?
-const houseName = myHouse.address.houseName;
-console.log("houseName");
-
-// 2. HOW DO YOU GET ACCESS TO THE REGION IN THE ADDRESS?
-const region = myHouse.address.region;
-console.log(region);
-
-// 3. HOW DO YOU GET ACCESS TO THE FIRST ROOM NAME OBJECT IN THE ROOMS ARRAY?
-const firstRoomName = myHouse.rooms[0].name;
-console.log(firstRoomName);
-
-// 4. HOW DO YOU GET ACCESS TO THE NAME OF THE LAST ROOM IN THE ROOMS ARRAY?
-const lastRoomIndex = myHouse.rooms.length - 1;
-console.log(myHouse.rooms[lastRoomIndex].name);
-
-// 5. CAN YOU CREATE A NEW ARRAY WITH ONLY ROOMS WITH FIREPLACES?
-//    - CREATE AN ARRAY OF [<li>Room name</li>, <li>Room name</li>]
-const roomsWithFireplaces = myHouse.rooms.filter(room => room.hasFirePlace);
-const roomNamesWithFireplaces = roomsWithFireplaces.map(room => `<li>${room.name}</li>`);
-console.log(roomNamesWithFireplaces);
